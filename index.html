@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cv Andres Felipe Lopez S.</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="50">
+    
+    <!-- barra de navegacion -->
+<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+            <a class="navbar-brand abinava " href="#">
+                <ion-icon name="code-slash-outline" class="lg"></ion-icon>
+            </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+        <div class="abinav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div id="navbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="#main">Conoceme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#habiProy">Habilidales & Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ademas">Ademas</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-BIS" href="#" data-toggle="modal" data-target="#modalCompra">¿Escribeme?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+</nav>
+    <!-- barra de navegacion -->
+
+    <!--modal-->
+    <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 style="font-family: 'Press Start 2P', cursive; font-size: 10px;" class="modal-title" id="exampleModalCenterTitle">console.log("¿Escribeme?")</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">#</span>
+                    </div>
+                    <input type="number" id="numeroE" class="form-control" placeholder="Celular" aria-label="Celular" aria-describedby="basic-addon1">
+                    <input type="text" id="nombreE" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="alert alert-warning" role="alert" >
+              Escribeme si te intereso mi perfil y quieres que haga parte en tu equipo
+            </div>        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-family: 'Press Start 2P', cursive;">Cancelar</button>
+            <button type="button" id="enviarMensaje guardarBtn" class="btn btn-BIS" onclick="numero(), enviarMensaje(), Cookies(), sesionStorage(), limpiar()" title="numero" style="font-family: 'Press Start 2P', cursive;">Enviar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/modal-->
+
+    
+    <!-- conoceme con imagen de carrusel -->
+    <main id="main">
+      <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/ilustracion-3d-luces-tecno-futuristas-ciencia-ficcion-azul-purpura-fondo-fresco.jpg" class="d-block w-100" alt="fiesta1">
+          </div>
+          <div class="carousel-item">
+            <img src="img/setup.jpeg" class="d-block w-100" alt="fiesta2">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Sin título.png" class="d-block w-100" alt="fiesta2">
+          </div>
+          <div class="overlay">
+            <div class="container">
+              <div class="row align-item-center">
+                <div class="col-md-6 offset-md-6 text-right text-right">
+                  <img src="img/Captura de pantalla 2023-05-11 084957.png" style="height: 330px; width: 330px" class="fiesta2">
+                  <h1 class="abit"><span>Andres Felipe Lopez S.</span></h1>
+                  <p class="d-none d-md-block">Desarrollador frontend, proactivo, responsable, liderazgo, comprometido con las labores asignadas, con gran habilidad para adaptarme a los entornos laborales de trabajo en equipo o individual, sagaz, estratégico en la implementación de nuevas soluciones e ideas favorables para mi entorno laboral, mi vida profesional y clientes, dispuesto asumir nuevos retos para aprender,aportar y poder desarrollarme como profesional.
+                    <br><br> La sabiduria no es completa por eso somos <br> Eternos Aprendices
+                  </p> 
+                </div>
+              </div>
+            </div>
+
+          </div>    
+
+        </div>
+        
+      </div>
+    </main>
+    <!-- conoceme con imagen de carrusel -->
+
+    <div  class="titulo centrar">
+      
+      <h1>Habilidales & Proyectos</h1>
+
+    </div>
+
+    <!-- MIs habilidades y mas informacion -->
+
+
+<div id="habiProy" class="general"> 
+    <div class="general acomodar">
+        <div class="habilidades centrar">
+            <div class="card mb-3" style="max-width: 740px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/html5_0.png" class="img-fluid rounded-start imagen" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">HTML</h5>
+                      <p class="card-text">Como Front-End Junior, creo estructuras web con HTML y aplico estilos visuales con CSS. Mi objetivo es hacer que el sitio web sea atractivo, funcional y fácil de usar para los usuarios, colaborando con diseñadores y mejorando la experiencia con interacciones en JavaScript.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 740px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/JavaScript-logo.png" class="img-fluid rounded-start imagen" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">JAVASCRIPT</h5>
+                      <p class="card-text">Además, me encargo de la validación de formularios en el lado del cliente, asegurándome de que los datos ingresados por los usuarios cumplan con los requisitos especificados. Utilizo JavaScript para verificar y validar los campos de entrada antes de enviar los datos al servidor, ademas de poder almacenar informacion en base de datos locales y externas, consultandolas por medio de metodos de JS</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 740px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/919826.png" class="img-fluid rounded-start imagen" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">CSS</h5>
+                      <p class="card-text">
+                        Como Front-End Junior, aplico CSS para estilizar y mejorar el aspecto visual de las páginas web. Trabajo junto a diseñadores y equipos de UX/UI para implementar diseños en código CSS, asegurando coherencia visual, legibilidad y accesibilidad en el sitio web.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+        <div class="proyectos centrar">            
+        <div class="card mb-3" style="max-width: 740px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="https://abic26.github.io/Bou_In_Style_page/" target="_blank"><img src="img/pag.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a> 
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Pagina Web</h5>
+                <p class="card-text">Mi proyecto de pagina web aplicada a una pyme real de colombia, la cual les ayuda a los clientes interactuar por medio de uas funciones que se le dieron a la pagina por medio de JavaScript, como enviar mensaje por whatsapp o ir a la ubicacion de la Boutique, se le dio estilos por medio de css a gusto de owner, me base en un mockup que el owner ya tenia previamente y le dimos caña para poderlo implementar en codigo. </p>
+                <a href="https://github.com/Abic26/Bou_In_Style_page.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 740px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="https://abic26.github.io/Creditos/" target="_blank"><img src="img/banco.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a> 
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Calcular Creditos</h5>
+                <p class="card-text">Mi sistema de creditos es una interfaz la cual se apoya de JavaScript para calcular creditos que se vayan a solicitar un cliente-usuario, se utilizo html para maquetar la estructura y css para darle los estilos a la interfaz y sea mas dinamica para los usuarios. </p>
+                <a href="https://github.com/Abic26/Creditos.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="card mb-3" style="max-width: 740px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="https://abic26.github.io/App_Arroz/"  target="_blank"><img src="img/bodega.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Sistema de bodegaje</h5>
+                <p class="card-text">Mi sistema de bodegajes el cual se puede aplicar a cualquier tipo de empresa, en este ejempo lo realice a una empresa que maneja una bodega de arroz, el cual se realizo por medio de html, css y fundamentalmente JavaScript para darle funcionalidad a las acciones que tiene esta aplicacion.</p>
+                <a href="https://github.com/Abic26/App_Arroz.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 740px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="https://github.com/Abic26/" target="_blank"><img src="img/todo.png" class="img-fluid rounded-start filtro" style="height: 100%; width: 100%;" alt="..."> </a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Mas proyectos++</h5>
+                <p class="card-text">Aca podras ingresar a mi repositorio de Github donde vas a poder encontrar mis proyectos y sus respectivos codigos.</p>
+                <a href="https://github.com/Abic26/" target="_blank"><button class="botonCodigos">Codigo</button></a>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <section class="x">
+    <img src="img/919826.png" alt="">
+    <img src="img/JavaScript-logo.png" alt="">
+    <img src="img/ilustracion-3d-luces-tecno-futuristas-ciencia-ficcion-azul-purpura-fondo-fresco.jpg" alt="">
+    <img src="img/html5_0.png" alt="">
+    <img src="img/bogota.jpg" alt="">
+  </section> -->
+    <!-- MIs habilidades y mas informacion -->
+
+    <div id="ademas" class="ademas centrar">
+      <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8 ">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Lenguajes de programacion y plataformas que utilizo -->
+<footer id="footer" class="pb-4 pt-4">
+    <div class="container">
+        <div class="row text-center">        
+            <div class="col-12 col-lg margenh">
+                <a href=""><ion-icon name="logo-html5" title="logo-html5"></ion-icon></a> 
+            </div>
+            <div class="col-12 col-lg margenc">
+                <a href=""><ion-icon name="logo-css3" title="logo-css3"></ion-icon></a>
+            </div>
+            <div class="col-12 col-lg margenj">
+                <a href=""><ion-icon name="logo-javascript" title="logo-javascript"></ion-icon></a>    
+            </div>
+            <div class="col-12 col-lg margenb">
+                <a a href="" title="BOOTSTRAP">BOOTSTRAP</a>    
+            </div>      
+            <div class="col-12 col-lg margenf">
+                <a href=""><ion-icon name="logo-figma" title="logo-figma"></ion-icon></a>  
+            </div>
+            <div class="col-12 col-lg margeng">
+                <a href="https://github.com/Abic26/" target="_blank"><ion-icon name="logo-github" title="logo-github"></ion-icon></a>    
+            </div>
+            <div class="col-12 col-lg margenw">
+               
+                <a  href="https://wa.me/3186078770" target="_blank"> <ion-icon name="logo-whatsapp"></ion-icon></a>    
+            </div>      
+        </div>
+    </div>      
+</footer>
+    <!-- Lenguajes de programacion y plataformas que utilizo -->
+
+
+    <!-- <section class="animation_loader">
+        <div class="a"
+            <div class="a">
+                <div class="a">
+                    <div class="a">
+                        <div class="a">
+                            <div class="a">
+                                <div class="a">
+                                    <div class="a">
+                                        <div class="a">
+                                            <div class="a">
+            <div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a">
+            <div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"><div class="a"></div></div></div></div></div></div></div></div></div></div>
+        
+            </div></div></div></div></div></div></div></div></div></div>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section> -->
+
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="js/xx.js"></script>
+</body>
+</html>
