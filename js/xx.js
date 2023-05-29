@@ -1,11 +1,16 @@
-
+  
 informacion = JSON.parse(localStorage.getItem('informacion')) || [];
+var idRandom = Array.from({length:5}, ()=> Math.random().toString(36).charAt(2)).join('')
+
 function numero(){
     let numeroE = document.getElementById("numeroE").value;
     let nombreE = document.getElementById("nombreE").value;
-    setLocalStorageNum(numeroE, nombreE)
+    let id = idRandom
+    setLocalStorageNum(numeroE, nombreE, id)
     localStorage.setItem('numeroE',numeroE)
     localStorage.setItem('nombreE',nombreE)
+    localStorage.setItem('idRandom', id)
+
 
 }
 document.getElementById('click', numero)
@@ -22,10 +27,10 @@ function enviarMensaje(){
 }
 
 
-function setLocalStorageNum(numeroE, nombreE){
-    if(numeroE, nombreE){
+function setLocalStorageNum(numeroE, nombreE, id){
+    if(numeroE, nombreE, id){
     const mensaje = alert("Me comunicare pronto!!!");
-    informacion.push({arrayNumNew: numeroE, arrayNomNew: nombreE});
+    informacion.push({id : idRandom ,arrayNumNew: numeroE, arrayNomNew: nombreE});
     localStorage.setItem("informacion",JSON.stringify(informacion));
     document.getElementById(mensaje);
     }else {
@@ -35,7 +40,8 @@ function setLocalStorageNum(numeroE, nombreE){
 function Cookies(){
     let numeroE = document.getElementById("numeroE").value;
     let nombreE = document.getElementById("nombreE").value;
-
+    let id = idRandom
+    document.cookie = "id = " + id
     document.cookie = "numero = " + numeroE
     document.cookie = "nombre = " + nombreE
 
@@ -45,9 +51,11 @@ function Cookies(){
 function sesionStorage(){
     let numeroE = document.getElementById("numeroE").value;
     let nombreE = document.getElementById("nombreE").value;
+    let id = idRandom
     sessionStorage.setItem("nombre", nombreE)
     sessionStorage.setItem("numero", numeroE)
     sessionStorage.setItem('informacion', JSON.stringify(informacion))
+    localStorage.setItem('idRandom', id)
     imprimir = informacion.map((item)=>{
         console.log(item);
     })
@@ -60,69 +68,75 @@ document.getElementById("nombreE").value = "";
 
 }
 
-
-
-
-// function dbindexed() {
-//     document.getElementById("guardarBtn").addEventListener("click", dbindexed);
+function baseDatos(){
+    let numeroE = document.getElementById("numeroE").value;
+    let nombreE = document.getElementById("nombreE").value;
+    let id = idRandom
     
-//     let openRequest = indexedDB.open("store", 2);
-  
-//     openRequest.onerror = function(event) {
-//       console.error("Error al abrir la base de datos", event.target.error);
-//     };
-  
-//     openRequest.onupgradeneeded = function(event) {
-//       let db = event.target.result;
-//       if (!db.objectStoreNames.contains("informacion")) {
-//         db.createObjectStore("informacion", { keyPath: "id", nombre: nombreE, numero:numeroE });
-//       }
-//     };
-  
-//     openRequest.onsuccess = function(event) {
-//       const db = event.target.result;
-  
-//       // Agregar elementos a la base de datos
-//       const transaction = db.transaction("informacion", "readwrite");
-//       const objectStore = transaction.objectStore("informacion");
-  
-//       let numeroE = document.getElementById("numeroE").value;
-//       let nombreE = document.getElementById("nombreE").value;
-//       let id = generateId(); // Generar un ID único para cada elemento
-  
-//       const data = { id: id, numero: numeroE, nombre: nombreE };
-//       const request = objectStore.add(data);
-  
-//       request.onsuccess = function(event) {
-//         console.log("Elemento agregado a la base de datos");
-//       };
-  
-//       transaction.oncomplete = function(event) {
-//         console.log("Transacción completada");
-//       };
-  
-//       transaction.onerror = function(event) {
-//         console.error("Error en la transacción", event.target.error);
-//       };
-  
-//       // Obtener todos los objetos guardados en la base de datos
-//       const getAllRequest = objectStore.getAll();
-  
-//       getAllRequest.onsuccess = function(event) {
-//         const allData = event.target.result;
-//         console.log("Objetos guardados en la base de datos:");
-//         console.log(allData);
-//       };
-  
-//       db.onversionchange = function() {
-//         db.close();
-//         alert("La base de datos está desactualizada");
-//       };
-  
-//       // Realiza operaciones en la base de datos aquí
-//     };
-//   }
-  
+    var user = {
+        id: idRandom,
+        nombreE:nombreE,
+        numeroE: numeroE,
+    }
 
-  
+    console.log(user);
+
+    //Open data base
+    var dataBase = window.indexedDB.open("myDataBase",3);
+
+    // Ejecución Correcta Crear o Abrir Base Datos
+    dataBase.onsuccess = (event)=>{
+
+        console.log("Creación o Error en Abrir Base Datos Correcta !!");
+        let db = dataBase.result;
+        console.log(db);
+        var instanceTransaction = db.transaction('users','readwrite').objectStore('users');
+        //Guardar Datos
+        var saveData = instanceTransaction.add(user);
+
+        alert("Datos Guardados");
+
+        var dataInfo = instanceTransaction.getAll();
+
+
+        dataInfo.onsuccess =(event) =>{
+
+            let data = dataInfo.result;
+
+            console.log(data);
+
+            var infoStructure = "";
+
+            data.map((element)=>{
+                infoStructure += "Nombre: " + element.nombreE;
+                infoStructure += "Numero: " + element.numeroE;
+                infoStructure += "<br>";
+            });
+        }
+        
+
+    }
+
+    // Ejecución al iniciar base datos
+
+    dataBase.onupgradeneeded = (event)=>{
+
+    console.log("Creación Object")
+
+     let db = event.target.result;
+
+     var createObjectData = db.createObjectStore("users", { keyPath: 'id'});
+
+    }
+
+
+    // Ejecución Error Abrir Base Datos
+    dataBase.onerror = (event)=>{
+        console.log("Error Creación o Error en Abrir Base Datos !!!");
+    }
+
+
+
+
+}
 

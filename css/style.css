@@ -1,8 +1,9 @@
 body{
     position: relative;
-    background-image: url(/img/ilustracion-3d-luces-tecno-futuristas-ciencia-ficcion-azul-purpura-fondo-fresco.jpg);
+    background-image: url(/img/fondo.png);
+    background-size: cover;
     
-    /*background-repeat: no-repeat;*/
+    
     
 }
 .lg{
