@@ -10,8 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body data-spy="scroll" data-target="#navbar" data-offset="50">
+<body data-spy="scroll" data-target="#navbar" data-offset="50" >
     
     <!-- barra de navegacion -->
 <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -75,7 +78,9 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-family: 'Press Start 2P', cursive;">Cancelar</button>
-            <button type="button" id="enviarMensaje guardarBtn" class="btn btn-BIS" onclick="numero(), enviarMensaje(), Cookies(), sesionStorage(), limpiar(), baseDatos()" title="numero" style="font-family: 'Press Start 2P', cursive;">Enviar</button>
+            <!-- <button type="button" id="enviarMensaje guardarBtn" class="btn btn-BIS" onclick="numero(), enviarMensaje(), Cookies(), sesionStorage(), limpiar(), baseDatos()" title="numero" style="font-family: 'Press Start 2P', cursive;">Enviar</button> -->
+            <button type="button" id="enviarMensaje guardarBtn" class="btn btn-BIS" onclick="EnviarBaseDatos(),enviarMensaje()" title="numero" style="font-family: 'Press Start 2P', cursive;">Enviar</button>
+            
           </div>
         </div>
       </div>
@@ -173,68 +178,105 @@
         </div>
 
         <div class="proyectos centrar">            
-        <div class="card mb-3" style="max-width: 740px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <a href="https://abic26.github.io/Bou_in_Style_Page/" target="_blank"><img src="img/pag.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a> 
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Pagina Web</h5>
-                <p class="card-text">Mi proyecto de pagina web aplicada a una Pyme real de colombia, la cual les ayuda a los clientes interactuar por medio de uas funciones que se le dieron a la pagina por medio de JavaScript, como enviar mensaje por whatsapp o ir a la ubicacion de la Boutique, se le dio estilos por medio de css a gusto de owner, me base en un mockup que el owner ya tenia previamente y le dimos caña para poderlo implementar en codigo. </p>
-                <a href="https://github.com/Abic26/Bou_in_Style_Page.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3" style="max-width: 740px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <a href="https://abic26.github.io/Creditos/" target="_blank"><img src="img/banco.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a> 
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Calcular Creditos</h5>
-                <p class="card-text">Mi sistema de creditos es una interfaz la cual se apoya de JavaScript para calcular creditos que se vayan a solicitar un cliente-usuario, se utilizo html para maquetar la estructura y css para darle los estilos a la interfaz y sea mas dinamica para los usuarios. </p>
-                <a href="https://github.com/Abic26/Creditos.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-    
-        <div class="card mb-3" style="max-width: 740px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <a href="https://abic26.github.io/App_Arroz/"  target="_blank"><img src="img/bodega.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Sistema de bodegaje</h5>
-                <p class="card-text">Mi sistema de bodegajes el cual se puede aplicar a cualquier tipo de empresa, en este ejempo lo realice a una empresa que maneja una bodega de arroz, el cual se realizo por medio de html, css y fundamentalmente JavaScript para darle funcionalidad a las acciones que tiene esta aplicacion.</p>
-                <a href="https://github.com/Abic26/App_Arroz.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3" style="max-width: 740px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <a href="https://github.com/Abic26/" target="_blank"><img src="img/todo.png" class="img-fluid rounded-start filtro" style="height: 100%; width: 100%;" alt="..."> </a>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Mas proyectos++</h5>
-                <p class="card-text">Aca podras ingresar a mi repositorio de Github donde vas a poder encontrar mis proyectos y sus respectivos codigos.</p>
-                <a href="https://github.com/Abic26/" target="_blank"><button class="botonCodigos">Codigo</button></a>
+          <div class="accordion accordion-flush" id="accordionFlushExample" style="width: 800px;">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-family: 'Press Start 2P', cursive;">
+                   Proyecto Pagina Web  #1
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <a href="https://abic26.github.io/Bou_in_Style_Page/" target="_blank"><img src="img/pag.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a> 
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Pagina Web</h5>
+                              <p class="card-text">Mi proyecto de pagina web aplicada a una Pyme real de colombia, la cual les ayuda a los clientes interactuar por medio de uas funciones que se le dieron a la pagina por medio de JavaScript, como enviar mensaje por whatsapp o ir a la ubicacion de la Boutique, se le dio estilos por medio de css a gusto de owner, me base en un mockup que el owner ya tenia previamente y le dimos caña para poderlo implementar en codigo. </p>
+                              <a href="https://github.com/Abic26/Bou_in_Style_Page.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
               
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
               </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" style="font-family: 'Press Start 2P', cursive;">
+                   Proyecto Calcupar Creditos #2
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" style="">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <a href="https://abic26.github.io/Creditos/" target="_blank"><img src="img/banco.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a> 
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Calcular Creditos</h5>
+                              <p class="card-text">Mi sistema de creditos es una interfaz la cual se apoya de JavaScript para calcular creditos que se vayan a solicitar un cliente-usuario, se utilizo html para maquetar la estructura y css para darle los estilos a la interfaz y sea mas dinamica para los usuarios. </p>
+                              <a href="https://github.com/Abic26/Creditos.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
+              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" style="font-family: 'Press Start 2P', cursive;" >
+                   Proyecto Sistema de bodegaje #3
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <a href="https://abic26.github.io/App_Arroz/"  target="_blank"><img src="img/bodega.png" class="img-fluid rounded-start filtro" alt="..." style="height: 100%; width: 100%;"></a>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Sistema de bodegaje</h5>
+                              <p class="card-text">Mi sistema de bodegajes el cual se puede aplicar a cualquier tipo de empresa, en este ejempo lo realice a una empresa que maneja una bodega de arroz, el cual se realizo por medio de html, css y fundamentalmente JavaScript para darle funcionalidad a las acciones que tiene esta aplicacion.</p>
+                              <a href="https://github.com/Abic26/App_Arroz.git" target="_blank"><button class="botonCodigos">Codigo</button></a>
+              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" style="font-family: 'Press Start 2P', cursive;" >
+                    Mas proyectos++ #4
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="card mb-3" style="max-width: 840px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <a href="https://github.com/Abic26/" target="_blank"><img src="img/todo.png" class="img-fluid rounded-start filtro" style="height: 100%; width: 100%;" alt="..."> </a>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Mas proyectos++</h5>
+                              <p class="card-text">Aca podras ingresar a mi repositorio de Github donde vas a poder encontrar mis proyectos y sus respectivos codigos.</p>
+                              <a href="https://github.com/Abic26/" target="_blank"><button class="botonCodigos">Codigo</button></a>
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+              
             </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -248,16 +290,15 @@
     <!-- MIs habilidades y mas informacion -->
 
     <div id="ademas" class="ademas centrar">
-      <div class="card mb-3" style="max-width: 540px;">
+      <div class="card mb-3" style="max-width: 1000px;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="..." class="img-fluid rounded-start" alt="...">
+          <img src="img/general.png" style="height: 100%; width: 100%;" class="img-fluid rounded-start" alt="General">
         </div>
         <div class="col-md-8 ">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            <h5 class="card-title">Loading Studies...</h5>
+            <p class="card-text">Actualmente estudio PHP, Laravel, Vue.js manejo de base de datos (Dbeaver,"MySQL"), manejo de postman(CRUD) para mejorar mis habilidades de desarrollo web. PHP me permite la creacion de aplicaciones dinámicas y sitios web interactivos. Con Laravel, puedo aprovechar su estructura sólida y funciones integradas para desarrollar aplicaciones web más eficientes. Además, Vue.js me permite crear interfaces de usuario dinámicas y reutilizables. Mi objetivo es expandir mis conocimientos y aplicarlos en proyectos futuros.</p>
           </div>
         </div>
       </div>
@@ -333,6 +374,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="js/xx.js"></script>
+<!-- <script src="js/localSesionStorage.js"></script> -->
+<script src="js/DataBase.js"></script>
 </body>
 </html>

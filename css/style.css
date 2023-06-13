@@ -31,7 +31,7 @@ body{
 .general{
     /* background-color: blanchedalmond; */
     width: 100%;
-    padding: 10px;
+    padding: 0px;
     height: auto;
     /* border: black solid 3px; */
     display: flex;
@@ -76,10 +76,21 @@ ul:hover a:hover{
 }
 .proyectos{
     width: 50%;
-    /* background-color: aquamarine; */
-    /* border: black solid 3px; */
+    top: 9px;
+    margin-top: 10px;
     text-align:center;
     align-items: center;
+    overflow: hidden;
+}
+.proyectos img{
+    object-fit: cover;
+    transition: transform 0.9s;
+    height: 100%;
+}
+.proyectos img:hover{
+    transform: scale(0.9);
+    border-radius: 10px;
+
 }
 .ademas{
     position: relative;
@@ -328,5 +339,5 @@ ion-icon{
     right: 750px;
     top: 25%;
     border-radius:160px;
-    border:10px solid #2da4db;
+    border:10px solid #2ddb2d;
 }
