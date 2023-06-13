@@ -22,18 +22,19 @@ function enviarMensaje(){
         window.open(url, '_blank');
         
     } else {
-        alert('Por favor, guarde el numero.')
+        alert('Por favor, guarde el numero y su nombre.')
     }
 }
 
 
 function setLocalStorageNum(numeroE, nombreE, id){
-    if(numeroE, nombreE, id){
-    const mensaje = alert("Me comunicare pronto!!!");
-    informacion.push({id : idRandom ,arrayNumNew: numeroE, arrayNomNew: nombreE});
-    localStorage.setItem("informacion",JSON.stringify(informacion));
-    document.getElementById(mensaje);
-    }else {
+    if (numeroE && nombreE && id) {
+        alert("Me comunicaré pronto!!!");
+        informacion.push({ id: idRandom, arrayNumNew: numeroE, arrayNomNew: nombreE });
+        localStorage.setItem("informacion", JSON.stringify(informacion));
+    }else{
+        alert("ingrese datos!!!");
+
     }
 }
 
@@ -94,7 +95,7 @@ function baseDatos(){
         //Guardar Datos
         var saveData = instanceTransaction.add(user);
 
-        alert("Datos Guardados");
+        // alert("Datos Guardados");
 
         var dataInfo = instanceTransaction.getAll();
 

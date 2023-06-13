@@ -76,8 +76,8 @@ ul:hover a:hover{
 }
 .proyectos{
     width: 50%;
-    top: 9px;
-    margin-top: 10px;
+    /* background-color: aquamarine; */
+    /* border: black solid 3px; */
     text-align:center;
     align-items: center;
     overflow: hidden;
