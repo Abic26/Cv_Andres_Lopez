@@ -336,8 +336,9 @@ ion-icon{
 }   
 .fiesta2{
     position: absolute;
-    right: 750px;
+    right: 900px;
     top: 25%;
     border-radius:160px;
-    border:10px solid #2ddb2d;
+    border:10px solid #2ddb2d85;
+    
 }
