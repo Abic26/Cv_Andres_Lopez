@@ -342,3 +342,12 @@ ion-icon{
     border:10px solid #2ddb2d85;
     
 }
+
+.CV{
+    font-size: 20px;
+    color: antiquewhite;
+}
+.CV:hover{
+    font-size: 25px;
+    color: greenyellow;
+}
